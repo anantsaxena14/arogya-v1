@@ -41,7 +41,7 @@ export default function SignupPage() {
 
       if (response.ok) {
         alert("Signup successful! Redirecting to login...");
-        navigate("/login");
+        navigate("/verify");
       } else {
         alert("Signup failed! Try again.");
       }
