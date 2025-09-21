@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
+import { useNavigate } from "react-router-dom";
 
 export default function VerifyPage() {
+  const navigate = useNavigate();
   const [, setLocation] = useLocation();
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
@@ -49,7 +51,8 @@ export default function VerifyPage() {
       if (data.error) {
         setError(data.error); // ✅ redirect without reload
       } else {
-        setLocation("/"); // ✅ redirect without reload
+        localStorage.setItem("token", "true");
+        navigate("/"); // ✅ redirect without reload
       }
     } catch (err) {
       console.error("Error verifying OTP:", err);
