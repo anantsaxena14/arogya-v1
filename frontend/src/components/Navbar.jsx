@@ -52,7 +52,7 @@ export default function Navbar() {
             <ul className="py-2">
               <li>
                 <Link
-                  to="login"
+                  to="profile"
                   className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100"
                 >
                   <User size={16} /> Profile

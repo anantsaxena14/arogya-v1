@@ -123,7 +123,7 @@ def register():
             weak_eyes=data.get("vision"),
             emergency_contact=data.get("emergency"),
             doctor_phone=data.get("doctor"),
-            firebase_token=False,
+            firebase_token=data.get("fb_token"),
             otp_hash=generate_password_hash(str(otp)),
         )
     else:
@@ -142,7 +142,7 @@ def register():
             weak_eyes=False,
             emergency_contact=False,
             doctor_phone=False,
-            firebase_token=False,
+            firebase_token=data.get("fb_token"),
             otp_hash=generate_password_hash(str(otp)),
         )
 
@@ -211,10 +211,9 @@ def login():
     if not user or not check_password_hash(user.password, data["password"]):
         return jsonify({"error": "Invalid credentials"}), 401
 
-    # update firebase token if provided
-    # if "firebase_token" in data:
-    #     user.firebase_token = data["firebase_token"]
-    #     db.session.commit()
+    if "firebase_token" in data and data["firebase_token"]:
+        user.firebase_token = data["firebase_token"]
+        db.session.commit()
 
     login_user(user)
     return jsonify({"message": "Logged in successfully"})
