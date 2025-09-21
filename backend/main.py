@@ -87,7 +87,7 @@ def load_user(user_id):
 
 
 # ---------------- Routes ----------------
-@app.route("/register", methods=["POST"])
+@app.route("/signup", methods=["POST"])
 def register():
     print("hello")
     data = request.json
