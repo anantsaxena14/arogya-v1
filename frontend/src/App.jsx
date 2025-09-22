@@ -16,13 +16,15 @@ import VerifyPage from "./components/LoginPage/VerifyPage";
 import Medmain from "./components/Medicine/Medmain";
 import MedicinePage from "./components/Medicine/MedicinePage";
 import ProtectedRoute from "./components/ProtectedRoute";
-import ProfilePage from "./components/Profile/ProfilePage";
+import ProfilePage from "./components/Profile/ProfileInfo";
 import LabTestDashboard from "./components/Labtest/LabTestDashboard";
 import ReportCard from "./components/Labtest/LabReports";
+import VitalOrgansDashboard from "./components/Labtest/VitalOrganDashboard";
+import WomenCare from "./components/Labtest/WomenCare";
+import RecentTests from "./components/Labtest/RecentTests";
 
-// Later you can add components for doctor-checks, top-tests, etc.
-// import DoctorChecks from "./components/Labtest/DoctorChecks";
-// import TopTests from "./components/Labtest/TopTests";
+
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -47,8 +49,13 @@ const router = createBrowserRouter(
         <Route path="medicine" element={<Medmain />} />
         <Route path="aboutmed" element={<MedicinePage />} />
         <Route path="profile" element={<ProfilePage />} />
-        <Route path="labreport" element={<ReportCard />} />
+        {/* // Routes for LabTest components */}
         <Route path="labtests" element={<LabTestDashboard />}/>
+        <Route path="labreport" element={<ReportCard />} />
+        <Route path="VitalOrganDashboard" element = {<VitalOrgansDashboard/>}/>
+        <Route path="WomenCare" element = {<WomenCare/>}/>
+        <Route path="RecentTests" element = {<RecentTests/>}/>
+        
 
         
       </Route>

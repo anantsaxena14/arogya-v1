@@ -44,16 +44,16 @@ export default function Navbar() {
           onClick={() => setOpen(!open)}
           className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200"
         >
-          <User src="" className="w-5 h-5 text-gray-600" />
+          <img src="/src/assets/profilepic.jpg" className="w-8 rounded-full object-cover h-8 text-gray-600" />
         </button>
 
         {open && (
-          <div className="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-lg ring-1 ring-black ring-opacity-5">
+          <div className="absolute right-0 mt-2 w-40 bg-white border-white rounded-xl shadow-lg ring-1 ring-black ring-opacity-5">
             <ul className="py-2">
               <li>
                 <Link
                   to="profile"
-                  className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  className="flex items-center hover:bg-blue-200 gap-2 px-4 py-2 text-gray-700 "
                 >
                   <User size={16} /> Profile
                 </Link>
@@ -61,24 +61,17 @@ export default function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-blue-200"
                 >
                   <Settings size={16} /> Settings
                 </a>
               </li>
-              <li>
-                <Link
-                  to="/Verify"
-                  className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100"
-                >
-                  <Settings size={16} /> Verify
-                </Link>
-              </li>
+             
               <li>
                 <a
                   href="#"
                   onClick={handleLogout}
-                  className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-blue-200"
                 >
                   <LogOut size={16}  /> Logout
                 </a>

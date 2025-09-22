@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="265c6a7e-b26a-418c-bb00-4ea4ab9ae696" name="Changes" comment="" />
+    <list default="true" id="265c6a7e-b26a-418c-bb00-4ea4ab9ae696" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instance/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/users.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-BVMVLZIT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-BVMVLZIT.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-F6QRBXOP.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-F6QRBXOP.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-OLO7LIXS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-OLO7LIXS.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/lucide-react.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/lucide-react.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/lucide-react.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/lucide-react.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-dom.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-dom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-dom_client.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-dom_client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-dom_client.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-dom_client.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-router-dom.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-router-dom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-router-dom.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-router-dom.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-dev-runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-dev-runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-dev-runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-dev-runtime.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-runtime.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/recharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/recharts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/recharts.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/recharts.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/wouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/wouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/wouter.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/wouter.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Labtest/LabTestDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Labtest/LabTestDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Profile/ProfilePage.jsx" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

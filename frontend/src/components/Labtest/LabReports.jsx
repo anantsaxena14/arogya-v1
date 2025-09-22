@@ -132,10 +132,10 @@ const ViewReports = () => {
             placeholder="Search reports..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full border rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full border rounded-lg pl-10 pr-4 py-2 bg-white   text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
-        <button className="flex items-center gap-2 border px-4 py-2 rounded-lg text-sm hover:bg-gray-50">
+        <button className="flex items-center gap-2 border bg-white px-4 py-2 rounded-lg text-sm hover:bg-gray-50">
           <Filter className="w-4 h-4" /> Filters
         </button>
       </div>

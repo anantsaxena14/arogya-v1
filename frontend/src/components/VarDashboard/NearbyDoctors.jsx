@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const doctors = [
   {
@@ -35,9 +36,9 @@ export default function NearbyDoctors() {
         <h2 className="text-lg font-semibold flex items-center gap-2">
           👩‍⚕️ Nearby Doctors
         </h2>
-        <a href="#" className="text-blue-500 hover:underline text-sm">
+        <Link  to="/doctors" className="text-blue-500 hover:underline text-sm">
           View All
-        </a>
+        </Link>
       </div>
 
       {/* Doctor Cards */}

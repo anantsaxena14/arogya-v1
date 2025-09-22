@@ -19,10 +19,10 @@ const cards = [
     link: "doctor-checks",
   },
   {
-    title: "Top Tests",
+    title: "Recent Tests",
     icon: <TestTube className="w-8 h-8 text-green-600" />,
     color: "bg-green-50",
-    link: "top-tests",
+    link: "/RecentTests",
   },
   {
     title: "Add Prescription",
@@ -31,10 +31,10 @@ const cards = [
     link: "add-prescription",
   },
   {
-    title: "Recent Tests",
+    title: "Need to Add",
     icon: <Clock className="w-8 h-8 text-orange-600" />,
     color: "bg-orange-50",
-    link: "recent-tests",
+    link: "/ReportsPage",
   },
   {
     title: "View Reports",
@@ -52,13 +52,13 @@ const cards = [
     title: "Popular Categories (Vital Organs)",
     icon: <HeartPulse className="w-8 h-8 text-red-600" />,
     color: "bg-red-50",
-    link: "popular-categories",
+    link: "/VitalOrganDashboard",
   },
   {
     title: "Women Care",
     icon: <Users className="w-8 h-8 text-violet-600" />,
     color: "bg-violet-50",
-    link: "women-care",
+    link: "/WomenCare",
   },
 ];
 
@@ -71,11 +71,11 @@ const LabTestDashboard = () => {
           <span className="text-green-600">Arogya</span>
           <span className="text-blue-600">Care</span>
         </h1>
-        <p className="text-gray-500">Your Complete Healthcare Solution</p>
+        <p className="text-gray-700 text-2xl">Your Complete Healthcare Solution</p>
       </div>
 
       {/* Section Title */}
-      <h2 className="text-xl font-semibold text-gray-700 mb-6">Lab Test</h2>
+      <h2 className="text-3xl font-semibold text-gray-700 mb-6">Lab Tests</h2>
 
       {/* Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
