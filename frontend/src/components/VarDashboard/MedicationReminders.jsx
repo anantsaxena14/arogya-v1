@@ -1,6 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function MedicationReminders() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchReminders = async () => {
+      const token = localStorage.getItem("token"); // get token from storage
+      try {
+        const res = await fetch("http://127.0.0.1:5000/reminders", {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`, // include token in Authorization header
+          },
+          credentials: "include",
+        });
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const json = await res.json();
+        setData(json);
+      } catch (err) {
+        console.error("Fetch error:", err);
+      }
+    };
+
+    fetchReminders();
+  }, []);
+
+
+
+
   // Toggle states for switches
   const [reminders, setReminders] = useState({
     morning: true,
@@ -13,8 +42,12 @@ export default function MedicationReminders() {
   };
 
   return (
+
     <div className="bg-white rounded-xl shadow-md  p-5">
       {/* Header */}
+      <div>
+        {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : 'Loading...'}
+      </div>
       <h2 className="text-lg font-semibold mb-4">
         Medication & Health Reminders
       </h2>
@@ -23,7 +56,7 @@ export default function MedicationReminders() {
       <div className="space-y-4">
         {/* Morning Medication */}
         <div className="flex justify-between items-center">
-          <div className ="">
+          <div className="">
             <p className="font-medium text-gray-800">Morning Medication</p>
             <p className="text-sm text-gray-500">8:00 AM</p>
           </div>

@@ -87,12 +87,29 @@ class YesNo(enum.Enum):
     YES = "yes"
     NO = "no"
 
-class Reminders(db.Model):
+class HealthReminders(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
-    user = db.Column(db.Integer, db.ForeignKey("parent.id"))
+    user = db.Column(db.Integer, db.ForeignKey("user.id"))
     title = db.Column(db.String, nullable=False)
     time = db.Column(db.Date, nullable=False)
     switch = db.Column(db.Enum(YesNo), nullable=False, default=YesNo.YES )
+
+
+class BeforeAfter(enum.Enum):
+    BEFORE = "before"
+    AFTER = "after"
+    NA = "na"
+
+class MedReminders(db.Model):
+    sno = db.Column(db.Integer, primary_key=True)
+    user = db.Column(db.Integer, db.ForeignKey("user.id"))
+    med = db.Column(db.String, nullable=False)
+    dosage = db.Column(db.String, nullable=False)
+    Schedule = db.Column(db.Enum(BeforeAfter), nullable=False, default=BeforeAfter.NA)
+    time = db.Column(db.Date, nullable=False)
+
+
+
 
 
 
@@ -252,6 +269,34 @@ def login_status():
         )
     else:
         return jsonify({"login_status": False})
+
+@app.route("/reminders", methods=["GET"])
+def get_reminders():
+    med_reminders = MedReminders.query.filter_by(user=current_user.id).all()
+    health_reminders = HealthReminders.query.filter_by(user=current_user.id).all()
+
+    med_list = [
+        {
+            "sno": med.sno,
+            "med": med.med,
+            "dosage": med.dosage,
+            "Schedule": med.Schedule.value,
+            "time": med.time.strftime("%Y-%m-%d %H:%M:%S"),
+        }
+        for med in med_reminders
+    ]
+
+    health_list = [
+        {
+            "sno": hr.sno,
+            "title": hr.title,
+            "time": hr.time.strftime("%Y-%m-%d %H:%M:%S"),
+            "switch": hr.switch.value,
+        }
+        for hr in health_reminders
+    ]
+
+    return jsonify({"medication_reminders": med_list, "health_reminders": health_list})
 
 
 @app.route("/protected", methods=["GET"])

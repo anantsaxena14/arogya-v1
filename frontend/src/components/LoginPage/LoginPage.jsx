@@ -12,40 +12,41 @@ export default function LoginPage() {
     password: "",
   });
 
-  
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const response = await fetch("http://127.0.0.1:5000/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch("http://127.0.0.1:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+        credentials: "include",
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (response.ok) {
-      // Save login state so ProtectedRoute allows access
-      localStorage.setItem("token", "true"); // or store JWT if backend sends it
+      if (response.ok) {
+        // Save login state so ProtectedRoute allows access
+        localStorage.setItem("token", "true"); // or store JWT if backend sends it
 
-      alert("Login successful! Redirecting to dashboard...");
-      navigate("/"); // redirect to dashboard
-    } else {
-      alert(data.error || "Invalid credentials! Try again.");
+        alert("Login successful! Redirecting to dashboard...");
+        navigate("/"); // redirect to dashboard
+      } else {
+        alert(data.error || "Invalid credentials! Try again.");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      alert("Something went wrong. Please try again.");
     }
-  } catch (error) {
-    console.error("Error during login:", error);
-    alert("Something went wrong. Please try again.");
-  }
-};
+  };
 
 
 
