@@ -1,3 +1,5 @@
+import enum
+
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -36,6 +38,7 @@ mail = Mail(app)
 
 # ---------------- Models ----------------
 class User(UserMixin, db.Model):
+    __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     phone = db.Column(db.String(15), nullable=False, unique=True)
@@ -79,6 +82,18 @@ class TempUser(db.Model):
 
     otp_hash = db.Column(db.String(200), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+class YesNo(enum.Enum):
+    YES = "yes"
+    NO = "no"
+
+class Reminders(db.Model):
+    sno = db.Column(db.Integer, primary_key=True)
+    user = db.Column(db.Integer, db.ForeignKey("parent.id"))
+    title = db.Column(db.String, nullable=False)
+    time = db.Column(db.Date, nullable=False)
+    switch = db.Column(db.Enum(YesNo), nullable=False, default=YesNo.YES )
+
 
 
 @login_manager.user_loader
