@@ -5,11 +5,11 @@ import Surveybox from "./VarDashboard/Survyebox";
 import Appointment from "./VarDashboard/Appointment";
 import RecentOrder from "./VarDashboard/RecentOrder";
 import TopwrittenText from "./VarDashboard/TopwrittenText";
-import VitalMonitor from "./VarDashboard/VitalMonitor"; // <-- import new component
+import VitalMonitor from "./VarDashboard/VitalMonitor";
 
 function Frontpage() {
   return (
-    <div className="bg-blue-50   min-h-screen">
+    <div className="bg-blue-50 min-h-screen">
       <div className="p-6">
         {/* Top Greeting */}
         <TopwrittenText />
@@ -34,9 +34,16 @@ function Frontpage() {
         </div>
 
         {/* ✅ Appointments & Orders Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-          <Appointment />
-          <RecentOrder />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+          {/* Make Appointment take more width so it's comfortable */}
+          <div className="lg:col-span-2">
+            <Appointment />
+          </div>
+
+          {/* Recent Orders stays on the side */}
+          <div>
+            <RecentOrder />
+          </div>
         </div>
       </div>
     </div>
