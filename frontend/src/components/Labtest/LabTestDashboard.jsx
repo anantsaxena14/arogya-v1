@@ -64,7 +64,7 @@ const cards = [
 
 const LabTestDashboard = () => {
   return (
-    <div className="p-6">
+    <div className="p-6 bg-blue-50">
       {/* Header */}
       <div className="text-center mb-10">
         <h1 className="text-3xl font-bold text-center mb-2">
@@ -83,7 +83,7 @@ const LabTestDashboard = () => {
           <Link
             key={index}
             to={card.link} // ✅ relative links work with nested routes
-            className={`${card.color} p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer block`}
+            className={`${card.color} p-6 rounded-2xl shadow hover:shadow-2xl transition cursor-pointer block`}
           >
             <div className="flex items-center justify-center mb-4">
               {card.icon}

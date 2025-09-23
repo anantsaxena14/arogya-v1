@@ -92,8 +92,13 @@ const ProfileInfo = () => {
                   name={key}
                   value={value}
                   onChange={handleChange}
-                  // disabled={!isEditing || key === "age"}
-                  className="peer w-full px-3 pt-5 pb-2 border border-gray-300 rounded-xl bg-white/60 shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-transparent disabled:bg-gray-100 transition-all"
+                  disabled={!isEditing || key === "age"}
+                  className={`peer w-full px-3 pt-5 pb-2 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all
+                    ${
+                      !isEditing || key === "age"
+                        ? "bg-gray-100 cursor-not-allowed text-gray-500"
+                        : "bg-white/60"
+                    }`}
                 />
                 <label className="absolute left-3 top-2 text-xs text-gray-500 transition-all peer-focus:text-blue-500">
                   {key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase())}

@@ -22,6 +22,7 @@ import ReportCard from "./components/Labtest/LabReports";
 import VitalOrgansDashboard from "./components/Labtest/VitalOrganDashboard";
 import WomenCare from "./components/Labtest/WomenCare";
 import RecentTests from "./components/Labtest/RecentTests";
+// import MedicalHistoryPage from "./components/MedicalHisotry/MedicalHistoryPage";
 
 
 
@@ -32,7 +33,7 @@ const router = createBrowserRouter(
       {/* Public routes */}
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
-      <Route path="/verify" element={<VerifyPage />} />
+      <Route path="/verify/:slug" element={<VerifyPage />} /> {/* ✅ fixed */}
 
       {/* Protected dashboard */}
       <Route
@@ -49,15 +50,12 @@ const router = createBrowserRouter(
         <Route path="medicine" element={<Medmain />} />
         <Route path="aboutmed" element={<MedicinePage />} />
         <Route path="profile" element={<ProfilePage />} />
-        {/* // Routes for LabTest components */}
         <Route path="labtests" element={<LabTestDashboard />}/>
         <Route path="labreport" element={<ReportCard />} />
-        <Route path="VitalOrganDashboard" element = {<VitalOrgansDashboard/>}/>
-        <Route path="WomenCare" element = {<WomenCare/>}/>
-        <Route path="RecentTests" element = {<RecentTests/>}/>
-        
-
-        
+        <Route path="VitalOrganDashboard" element={<VitalOrgansDashboard/>}/>
+        <Route path="WomenCare" element={<WomenCare/>}/>
+        <Route path="RecentTests" element={<RecentTests/>}/>
+        {/* <Route path="medicalhistory" element = {<MedicalHistoryPage/>}/> */}
       </Route>
 
       {/* Redirect unknown paths to login */}
@@ -65,6 +63,7 @@ const router = createBrowserRouter(
     </>
   )
 );
+
 
 function App() {
   return <RouterProvider router={router} />;

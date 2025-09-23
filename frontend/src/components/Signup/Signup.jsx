@@ -39,11 +39,11 @@ export default function SignupPage() {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
-        alert("Signup successful! Redirecting to login...");
-        navigate("/verify");
+      if (response.message) {
+        alert(response.message);
+        alert('check your email for verification link');
       } else {
-        alert("Signup failed! Try again.");
+        alert(response.error);
       }
     } catch (error) {
       console.error("Error during signup:", error);

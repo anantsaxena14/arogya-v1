@@ -126,7 +126,7 @@ const HealthAssistant = () => {
       )}
 
       {/* Input Section */}
-      <div className="fixed bottom-0 left-0 right-0 ml-64 bg-white border-t border-gray-200 px-8 py-5 flex justify-center items-center gap-4 z-50 shadow-md">
+      <div className={"fixed bottom-0 left-0 right-0   mr-3   bg-white border-t border-gray-200 px-8 py-5 flex justify-center items-center gap-4 z-50 shadow-md"}>
         <input
           type="text"
           placeholder="Type your health question..."

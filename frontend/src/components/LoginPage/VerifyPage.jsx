@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { useLocation } from "wouter";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function VerifyPage() {
+  const { slug } = useParams(); // ✅ get slug from /verify/:slug
   const navigate = useNavigate();
-  const [, setLocation] = useLocation();
-  const [email, setEmail] = useState("");
+
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -26,11 +25,6 @@ export default function VerifyPage() {
     e.preventDefault();
     const enteredOtp = otp.join("");
 
-    if (!email) {
-      setError("Please enter your email");
-      return;
-    }
-
     if (enteredOtp.length !== 6) {
       setError("Please enter all 6 digits of OTP");
       return;
@@ -40,19 +34,19 @@ export default function VerifyPage() {
     setError("");
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/verify", {
+      const response = await fetch(`http://127.0.0.1:5000/verify/${slug}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, otp: enteredOtp }),
+        body: JSON.stringify({ otp: enteredOtp }),
       });
 
       const data = await response.json();
 
       if (data.error) {
-        setError(data.error); // ✅ redirect without reload
+        setError(data.error);
       } else {
-        localStorage.setItem("token", "true");
-        navigate("/"); // ✅ redirect without reload
+        localStorage.setItem("verified", "true");
+        navigate("/login"); // ✅ redirect to login after success
       }
     } catch (err) {
       console.error("Error verifying OTP:", err);
@@ -76,20 +70,10 @@ export default function VerifyPage() {
           Verify Your Account 🔒
         </h2>
         <p className="text-sm text-gray-600 text-center mb-6">
-          Enter your email and the 6-digit code sent to you
+          Enter the 6-digit code sent to your email
         </p>
 
         <form onSubmit={handleVerify} className="space-y-6">
-          {/* Email Input */}
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
-            className="w-full p-3 border rounded-md text-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-            required
-          />
-
           {/* OTP Inputs */}
           <div className="flex justify-between gap-2">
             {otp.map((digit, index) => (

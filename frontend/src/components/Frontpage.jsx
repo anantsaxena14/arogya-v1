@@ -9,7 +9,7 @@ import VitalMonitor from "./VarDashboard/VitalMonitor"; // <-- import new compon
 
 function Frontpage() {
   return (
-    <div className="bg-blue-50 min-h-screen">
+    <div className="bg-blue-50   min-h-screen">
       <div className="p-6">
         {/* Top Greeting */}
         <TopwrittenText />

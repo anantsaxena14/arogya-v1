@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Mail, Lock } from "lucide-react"; // icons for inputs
-
-
+import { Mail, Lock } from "lucide-react";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -12,42 +10,42 @@ export default function LoginPage() {
     password: "",
   });
 
-  
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
+    setLoading(true);
 
-  try {
-    const response = await fetch("http://127.0.0.1:5000/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch("http://127.0.0.1:5000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (response.ok) {
-      // Save login state so ProtectedRoute allows access
-      localStorage.setItem("token", "true"); // or store JWT if backend sends it
+      if (response.ok) {
+        // ✅ Save token + user data in localStorage
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user_id", data.user_id);
 
-      alert("Login successful! Redirecting to dashboard...");
-      navigate("/"); // redirect to dashboard
-    } else {
-      alert(data.error || "Invalid credentials! Try again.");
+        alert("Login successful! Redirecting...");
+        navigate("/"); // redirect to dashboard
+      } else {
+        alert(data.error || "Invalid credentials! Try again.");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      alert("Something went wrong. Please try again.");
     }
-  } catch (error) {
-    console.error("Error during login:", error);
-    alert("Something went wrong. Please try again.");
-  }
-};
 
-
+    setLoading(false);
+  };
 
   return (
     <div className="min-h-screen flex items-center w-full h-screen bg-[url('src/assets/bgimage.jpeg')] bg-cover justify-center bg-blue-50">
@@ -74,6 +72,7 @@ export default function LoginPage() {
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full pl-10 pr-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-400"
+                required
               />
             </div>
           </div>
@@ -88,15 +87,17 @@ export default function LoginPage() {
                 value={formData.password}
                 onChange={handleChange}
                 className="w-full pl-10 pr-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-400"
+                required
               />
             </div>
           </div>
 
           <button
             type="submit"
-            className="w-full bg-teal-500 text-white py-2.5 rounded-xl font-semibold hover:bg-teal-600 transition shadow-sm"
+            disabled={loading}
+            className="w-full bg-teal-500 text-white py-2.5 rounded-xl font-semibold hover:bg-teal-600 transition shadow-sm disabled:opacity-50"
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 
