@@ -16,7 +16,7 @@ CORS(app, supports_credentials=True, origins=["http://localhost:5173"])
 
 # IMPORTANT: change for production and use env vars
 app.config["SECRET_KEY"] = "your_secret_key_here"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///arogyacare.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Mail config (replace with your SMTP settings; consider environment vars)
@@ -107,6 +107,50 @@ class MedReminders(db.Model):
     dosage = db.Column(db.String, nullable=False)
     Schedule = db.Column(db.Enum(BeforeAfter), nullable=False, default=BeforeAfter.NA)
     time = db.Column(db.Date, nullable=False)
+
+class Doctor(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), nullable=False)
+    specialty = db.Column(db.String(80), nullable=False)
+    experience_years = db.Column(db.Integer, nullable=False)
+    rating = db.Column(db.Float, nullable=False, default=0.0)
+    review_count = db.Column(db.Integer, nullable=False, default=0)
+    about = db.Column(db.Text)
+    education = db.Column(db.Text)  # Comma-separated or JSON string
+    hospital_affiliations = db.Column(db.Text)  # Comma-separated or JSON string
+    qualifications = db.Column(db.Text)  # Comma-separated or JSON string
+    clinic_address = db.Column(db.String(255))
+    consultation_fee = db.Column(db.Integer)  # Store in lowest currency unit (e.g. INR paisa)
+    is_previously_consulted = db.Column(db.Boolean, default=False)
+    profile_picture = db.Column(db.String(255))
+    longitude = db.Column(db.Float, nullable=False)
+    latitude = db.Column(db.Float, nullable=False)
+
+
+class Medicine(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    brand = db.Column(db.String(50))
+    company = db.Column(db.String(100))
+    price = db.Column(db.Float, nullable=False)
+    mrp = db.Column(db.Float)
+    discount_percent = db.Column(db.Float)
+    stock = db.Column(db.Integer, default=0)
+    quantity_per_pack = db.Column(db.Integer)
+    rating = db.Column(db.Float)
+    review_count = db.Column(db.Integer)
+    is_available = db.Column(db.Boolean, default=True)
+    image_url = db.Column(db.String(200))
+    description = db.Column(db.Text)
+    composition = db.Column(db.Text)
+    storage = db.Column(db.String(100))
+    side_effects = db.Column(db.Text)
+    how_to_use = db.Column(db.Text)
+    safety = db.Column(db.Text)
+    dealer = db.Column(db.String(100))
+    keywords = db.Column(db.String(200))
+
+
 # ---------------- Helpers ----------------
 def send_verification_email(email: str, slug: str, otp: int):
     """Send a verification email containing the link (slug) and OTP."""
