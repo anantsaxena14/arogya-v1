@@ -22,7 +22,7 @@ import ReportCard from "./components/Labtest/LabReports";
 import VitalOrgansDashboard from "./components/Labtest/VitalOrganDashboard";
 import WomenCare from "./components/Labtest/WomenCare";
 import RecentTests from "./components/Labtest/RecentTests";
-// import MedicalHistoryPage from "./components/MedicalHisotry/MedicalHistoryPage";
+import MedicalHistoryPage from "./components/MedicalHisotry/MedicalHistoryPage";
 
 
 
@@ -55,7 +55,7 @@ const router = createBrowserRouter(
         <Route path="VitalOrganDashboard" element={<VitalOrgansDashboard/>}/>
         <Route path="WomenCare" element={<WomenCare/>}/>
         <Route path="RecentTests" element={<RecentTests/>}/>
-        {/* <Route path="medicalhistory" element = {<MedicalHistoryPage/>}/> */}
+        <Route path="medicalhistory" element = {<MedicalHistoryPage/>}/>
       </Route>
 
       {/* Redirect unknown paths to login */}

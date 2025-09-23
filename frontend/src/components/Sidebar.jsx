@@ -10,7 +10,7 @@ export default function Sidebar({ minimized, setMinimized }) {
     { name: "MediBot", icon: <Bot size={20} />, link: "mediBot" },
     { name: "Doctors List", icon: <List size={20} />, link: "doctors" },
     { name: "Medicine", icon: <Pill size={20} />, link: "medicine" },
-    { name: "Medical History", icon: <FileText size={20} />, link: "medicine"},
+    { name: "Medical History", icon: <FileText size={20} />, link: "medicalhistory"},
     { name: "Lab Tests", icon: <FlaskConical size={20} />, link: "labtests" },
   ];
 
