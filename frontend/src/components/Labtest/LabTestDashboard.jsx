@@ -12,12 +12,7 @@ import {
 } from "lucide-react";
 
 const cards = [
-  {
-    title: "Doctor Created Checks",
-    icon: <Stethoscope className="w-8 h-8 text-cyan-600" />,
-    color: "bg-cyan-50",
-    link: "doctor-checks",
-  },
+  
   {
     title: "Recent Tests",
     icon: <TestTube className="w-8 h-8 text-green-600" />,
@@ -30,12 +25,7 @@ const cards = [
     color: "bg-purple-50",
     link: "add-prescription",
   },
-  {
-    title: "Need to Add",
-    icon: <Clock className="w-8 h-8 text-orange-600" />,
-    color: "bg-orange-50",
-    link: "/ReportsPage",
-  },
+ 
   {
     title: "View Reports",
     icon: <FileBarChart className="w-8 h-8 text-blue-600" />,

@@ -11,7 +11,6 @@ const MedicalHistoryPage = () => {
   const [vaccinations, setVaccinations] = useState([]);
   const [doctorNotes, setDoctorNotes] = useState([]);
 
-  // Example: Fetch data from backend (API integration can be added later)
   useEffect(() => {
     setVitals({
       heartRate: "78 bpm",
@@ -53,164 +52,176 @@ const MedicalHistoryPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-100 to-purple-200 p-6">
+    <div className="min-h-screen bg-gradient-to-b bg-blue-50 p-6">
       {/* Navbar with Search */}
       <div className="flex justify-between items-center mb-6">
         <input
           type="text"
           placeholder="Search medical records, medications, conditions..."
-          className="w-full max-w-xl shadow-md px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-purple-400"
+          className="w-full max-w-xl shadow-md px-4 py-2 bg-white rounded-lg border 
+          focus:outline-none focus:ring-2 focus:ring-blue-500 focus:shadow-lg 
+          transition duration-300"
         />
       </div>
 
-      {/* Current Vitals */}
-      <div className="bg-white rounded-xl shadow-md mb-6">
-        <div className="border-b px-4 py-3">
-          <h2 className="text-lg font-semibold">Current Vitals</h2>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
-          <div className="p-4 rounded-2xl shadow bg-white">
-            Heart Rate: {vitals.heartRate}
-          </div>
-          <div className="p-4 rounded-2xl shadow bg-white">
-            Blood Pressure: {vitals.bloodPressure}
-          </div>
-          <div className="p-4 rounded-2xl shadow bg-white">
-            Oxygen Level: {vitals.oxygen}
-          </div>
-          <div className="p-4 rounded-2xl shadow bg-white">
-            Temperature: {vitals.temperature}
-          </div>
-        </div>
-      </div>
-
-      {/* Current Health Overview */}
-      <div className="bg-white rounded-xl shadow-md mb-6">
-        <div className="border-b px-4 py-3">
-          <h2 className="text-lg font-semibold">Current Health Overview</h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-4 p-4">
-          <div className="p-4 bg-white rounded-2xl shadow">
-            <strong>Active Conditions:</strong>
-            <ul>
-              {conditions.map((c, i) => (
-                <li key={i}>{c}</li>
+      {/* Section Wrapper */}
+      {[
+        {
+          title: "Current Vitals",
+          content: (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+              <div className="p-4 rounded-2xl shadow bg-gradient-to-r from-purple-100 to-purple-200 hover:scale-105 hover:shadow-xl transition">
+                ❤️ Heart Rate: {vitals.heartRate}
+              </div>
+              <div className="p-4 rounded-2xl shadow bg-gradient-to-r from-pink-100 to-pink-200 hover:scale-105 hover:shadow-xl transition">
+                💓 Blood Pressure: {vitals.bloodPressure}
+              </div>
+              <div className="p-4 rounded-2xl shadow bg-gradient-to-r from-blue-100 to-blue-200 hover:scale-105 hover:shadow-xl transition">
+                🌬 Oxygen Level: {vitals.oxygen}
+              </div>
+              <div className="p-4 rounded-2xl shadow bg-gradient-to-r from-yellow-100 to-yellow-200 hover:scale-105 hover:shadow-xl transition">
+                🌡 Temperature: {vitals.temperature}
+              </div>
+            </div>
+          ),
+        },
+        {
+          title: "Current Health Overview",
+          content: (
+            <div className="grid md:grid-cols-3 gap-4 p-4">
+              <div className="p-4 bg-white rounded-2xl shadow hover:bg-purple-50 hover:shadow-lg transition">
+                <strong>Active Conditions:</strong>
+                <ul>
+                  {conditions.map((c, i) => (
+                    <li key={i}>• {c}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-4 bg-white rounded-2xl shadow hover:bg-purple-50 hover:shadow-lg transition">
+                <strong>Current Medications:</strong>
+                <ul>
+                  {medications.map((m, i) => (
+                    <li key={i}>• {m}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-4 bg-white rounded-2xl shadow hover:bg-purple-50 hover:shadow-lg transition">
+                <strong>Allergies:</strong>
+                <ul>
+                  {allergies.map((a, i) => (
+                    <li key={i}>• {a}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ),
+        },
+        {
+          title: "Family Medical History",
+          content: (
+            <div className="grid md:grid-cols-3 gap-4 p-4">
+              {familyHistory.map((f, i) => (
+                <div
+                  key={i}
+                  className="p-4 bg-white rounded-2xl shadow hover:shadow-lg hover:bg-pink-50 transition"
+                >
+                  👪 {f.relation}: {f.issues.join(", ")}
+                </div>
               ))}
-            </ul>
-          </div>
-          <div className="p-4 bg-white rounded-2xl shadow">
-            <strong>Current Medications:</strong>
-            <ul>
-              {medications.map((m, i) => (
-                <li key={i}>{m}</li>
+            </div>
+          ),
+        },
+        {
+          title: "Medical History",
+          content: (
+            <div className="space-y-4 p-4">
+              <div className="p-4 bg-white rounded-2xl shadow hover:shadow-lg hover:bg-purple-50 transition">
+                <strong>Past Conditions:</strong>{" "}
+                {medicalHistory.pastConditions?.join(", ")}
+              </div>
+              <div className="p-4 bg-white rounded-2xl shadow hover:shadow-lg hover:bg-purple-50 transition">
+                <strong>Surgical History:</strong>{" "}
+                {medicalHistory.surgicalHistory?.join(", ")}
+              </div>
+              <div className="p-4 bg-white rounded-2xl shadow hover:shadow-lg hover:bg-purple-50 transition">
+                <strong>Hospital Visits & Admissions:</strong>{" "}
+                {medicalHistory.hospitalVisits?.join(", ")}
+              </div>
+            </div>
+          ),
+        },
+        {
+          title: "Test Results & Lab Reports",
+          content: (
+            <div className="space-y-4 p-4">
+              {labReports.map((r, i) => (
+                <div
+                  key={i}
+                  className="p-4 bg-gradient-to-r from-green-100 to-green-200 rounded-2xl shadow hover:scale-105 hover:shadow-lg transition"
+                >
+                  🧪 {r}
+                </div>
               ))}
-            </ul>
-          </div>
-          <div className="p-4 bg-white rounded-2xl shadow">
-            <strong>Allergies:</strong>
-            <ul>
-              {allergies.map((a, i) => (
-                <li key={i}>{a}</li>
+            </div>
+          ),
+        },
+        {
+          title: "Immunization & Vaccination Records",
+          content: (
+            <div className="grid md:grid-cols-4 gap-4 p-4">
+              {vaccinations.map((v, i) => (
+                <div
+                  key={i}
+                  className="p-4 bg-gradient-to-r from-yellow-100 to-yellow-200 rounded-2xl shadow hover:scale-105 hover:shadow-lg transition"
+                >
+                  💉 {v}
+                </div>
               ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Family Medical History */}
-      <div className="bg-white rounded-xl shadow-md mb-6">
-        <div className="border-b px-4 py-3">
-          <h2 className="text-lg font-semibold">Family Medical History</h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-4 p-4">
-          {familyHistory.map((f, i) => (
-            <div key={i} className="p-4 bg-white rounded-2xl shadow">
-              {f.relation}: {f.issues.join(", ")}
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Medical History */}
-      <div className="bg-white rounded-xl shadow-md mb-6">
-        <div className="border-b px-4 py-3">
-          <h2 className="text-lg font-semibold">Medical History</h2>
-        </div>
-        <div className="space-y-4 p-4">
-          <div className="p-4 bg-white rounded-2xl shadow">
-            <strong>Past Conditions:</strong>{" "}
-            {medicalHistory.pastConditions?.join(", ")}
-          </div>
-          <div className="p-4 bg-white rounded-2xl shadow">
-            <strong>Surgical History:</strong>{" "}
-            {medicalHistory.surgicalHistory?.join(", ")}
-          </div>
-          <div className="p-4 bg-white rounded-2xl shadow">
-            <strong>Hospital Visits & Admissions:</strong>{" "}
-            {medicalHistory.hospitalVisits?.join(", ")}
-          </div>
-        </div>
-      </div>
-
-      {/* Test Results & Lab Reports */}
-      <div className="bg-white rounded-xl shadow-md mb-6">
-        <div className="border-b px-4 py-3">
-          <h2 className="text-lg font-semibold">Test Results & Lab Reports</h2>
-        </div>
-        <div className="space-y-4 p-4">
-          {labReports.map((r, i) => (
-            <div key={i} className="p-4 bg-white rounded-2xl shadow">
-              {r}
+          ),
+        },
+        {
+          title: "Doctor Notes",
+          content: (
+            <div className="space-y-4 p-4">
+              {doctorNotes.map((n, i) => (
+                <div
+                  key={i}
+                  className="p-4 bg-white rounded-2xl shadow hover:bg-blue-50 hover:shadow-lg transition"
+                >
+                  <strong>👨‍⚕️ {n.doctor}:</strong> {n.note}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Immunization & Vaccination Records */}
-      <div className="bg-white rounded-xl shadow-md mb-6">
-        <div className="border-b px-4 py-3">
-          <h2 className="text-lg font-semibold">
-            Immunization & Vaccination Records
-          </h2>
-        </div>
-        <div className="grid md:grid-cols-4 gap-4 p-4">
-          {vaccinations.map((v, i) => (
-            <div key={i} className="p-4 bg-white rounded-2xl shadow">
-              {v}
+          ),
+        },
+        {
+          title: "Upload Document",
+          content: (
+            <div className="p-4">
+              <input
+                type="file"
+                className="mb-4 block w-full text-sm text-gray-600 border rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+              />
+              <button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow hover:scale-105 hover:shadow-lg transition">
+                Upload
+              </button>
             </div>
-          ))}
+          ),
+        },
+      ].map((section, index) => (
+        <div
+          key={index}
+          className="bg-white/90 backdrop-blur-md rounded-xl shadow-md mb-6 hover:shadow-lg transition"
+        >
+          <div className="border-b px-4 py-3 bg-gradient-to-r from-purple-200 to-purple-300 rounded-t-xl">
+            <h2 className="text-lg font-semibold text-gray-800">
+              {section.title}
+            </h2>
+          </div>
+          {section.content}
         </div>
-      </div>
-
-      {/* Doctor Notes */}
-      <div className="bg-white rounded-xl shadow-md mb-6">
-        <div className="border-b px-4 py-3">
-          <h2 className="text-lg font-semibold">Doctor Notes</h2>
-        </div>
-        <div className="space-y-4 p-4">
-          {doctorNotes.map((n, i) => (
-            <div key={i} className="p-4 bg-white rounded-2xl shadow">
-              <strong>{n.doctor}:</strong> {n.note}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Upload Document */}
-      <div className="bg-white rounded-xl shadow-md mb-6">
-        <div className="border-b px-4 py-3">
-          <h2 className="text-lg font-semibold">Upload Document</h2>
-        </div>
-        <div className="p-4">
-          <input
-            type="file"
-            className="mb-4 block w-full text-sm text-gray-600 border rounded-lg cursor-pointer focus:outline-none"
-          />
-          <button className="px-6 py-2 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700 transition">
-            Upload
-          </button>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };

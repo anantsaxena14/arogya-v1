@@ -23,6 +23,9 @@ import VitalOrgansDashboard from "./components/Labtest/VitalOrganDashboard";
 import WomenCare from "./components/Labtest/WomenCare";
 import RecentTests from "./components/Labtest/RecentTests";
 import MedicalHistoryPage from "./components/MedicalHisotry/MedicalHistoryPage";
+import DoctorLoginPage from "./components/LoginPage/DoctorLoginPage";
+import DoctorSignup from "./components/Signup/DoctorSignup";
+import ToggleSwitch from "./components/ToogleSwitch";
 
 
 
@@ -33,8 +36,10 @@ const router = createBrowserRouter(
       {/* Public routes */}
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
-      <Route path="/verify/:slug" element={<VerifyPage />} /> {/* ✅ fixed */}
-
+      <Route path="/verify/:slug" element={<VerifyPage />} />
+      <Route path="docotrlogin" element = {<DoctorLoginPage/>}/> {/* ✅ fixed */}
+      <Route path="doctorsignup" element = {<DoctorSignup/>}/>
+      
       {/* Protected dashboard */}
       <Route
         path="/"
@@ -56,6 +61,8 @@ const router = createBrowserRouter(
         <Route path="WomenCare" element={<WomenCare/>}/>
         <Route path="RecentTests" element={<RecentTests/>}/>
         <Route path="medicalhistory" element = {<MedicalHistoryPage/>}/>
+       
+       
       </Route>
 
       {/* Redirect unknown paths to login */}

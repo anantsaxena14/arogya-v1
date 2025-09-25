@@ -49,6 +49,44 @@ const ProfileInfo = () => {
         transition={{ duration: 0.5 }}
         className="w-full max-w-4xl p-8 rounded-3xl shadow-2xl backdrop-blur-xl bg-white/70 border border-white/40"
       >
+        {/* Buttons */}
+        <div className="mt-8 flex justify-end gap-4">
+          {isEditing ? (
+            <>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsEditing(false)}
+                className="px-6 py-2 rounded-xl bg-gray-200 hover:bg-gray-300 transition"
+              >
+                Cancel
+              </motion.button>
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  backgroundImage: "linear-gradient(to right, #3b82f6, #06b6d4)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleSave}
+                className="px-6 py-2 rounded-xl text-white bg-gradient-to-r from-blue-500 to-cyan-400 shadow-lg"
+              >
+                Save
+              </motion.button>
+            </>
+          ) : (
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                backgroundImage: "linear-gradient(to right, #3b82f6, #06b6d4)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsEditing(true)}
+              className="px-6 py-2 rounded-xl text-white bg-gradient-to-r from-blue-500 to-cyan-400 shadow-lg"
+            >
+              Edit Profile
+            </motion.button>
+          )}
+        </div>
         {/* Profile Header */}
         <div className="flex flex-col items-center mb-8 relative">
           <motion.div
@@ -108,44 +146,7 @@ const ProfileInfo = () => {
           )}
         </motion.form>
 
-        {/* Buttons */}
-        <div className="mt-8 flex justify-end gap-4">
-          {isEditing ? (
-            <>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsEditing(false)}
-                className="px-6 py-2 rounded-xl bg-gray-200 hover:bg-gray-300 transition"
-              >
-                Cancel
-              </motion.button>
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  backgroundImage: "linear-gradient(to right, #3b82f6, #06b6d4)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handleSave}
-                className="px-6 py-2 rounded-xl text-white bg-gradient-to-r from-blue-500 to-cyan-400 shadow-lg"
-              >
-                Save
-              </motion.button>
-            </>
-          ) : (
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                backgroundImage: "linear-gradient(to right, #3b82f6, #06b6d4)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsEditing(true)}
-              className="px-6 py-2 rounded-xl text-white bg-gradient-to-r from-blue-500 to-cyan-400 shadow-lg"
-            >
-              Edit Profile
-            </motion.button>
-          )}
-        </div>
+        
       </motion.div>
     </div>
   );

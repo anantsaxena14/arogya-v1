@@ -43,9 +43,9 @@ export default function Appointments() {
 
       {/* Tabs */}
       <div className="flex justify-center mb-6">
-        <div className="flex bg-gray-100 rounded-full p-1">
+        <div className="flex bg-gray-100 justify-center rounded-full w-[600px] p-1">
           <button
-            className={`px-6 py-2 rounded-full text-sm font-medium transition ${
+            className={`px-6 py-2 rounded-full text-sm w-[300px] font-medium transition ${
               activeTab === "upcoming"
                 ? "bg-white shadow text-black"
                 : "text-gray-600"
@@ -55,7 +55,7 @@ export default function Appointments() {
             Upcoming
           </button>
           <button
-            className={`px-6 py-2 rounded-full text-sm font-medium transition ${
+            className={`px-6 py-2 rounded-full text-sm w-[300px]  font-medium transition ${
               activeTab === "past"
                 ? "bg-white shadow text-black"
                 : "text-gray-600"

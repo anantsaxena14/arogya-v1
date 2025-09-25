@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import ToggleSwitch from "../ToogleSwitch";
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -41,7 +42,8 @@ export default function SignupPage() {
 
       if (response.message) {
         alert(response.message);
-        alert('check your email for verification link');
+        alert("Check your email for verification link");
+        navigate("/login");
       } else {
         alert(response.error);
       }
@@ -51,32 +53,63 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
-      <div className="flex bg-white shadow-2xl rounded-2xl overflow-hidden w-full max-w-6xl">
-        
-        {/* Left Side Illustration */}
-        <div className="w-1/2 bg-gradient-to-br from-blue-200 to-blue-500 flex items-center justify-center p-6">
-          <img
-            src="src/assets/Healthcare_login_illustration_f4438a3d.png" // replace with your doctor image path
-            alt="Doctor Illustration"
-            className="w-180 h-auto"
-          />
-        </div>
-
-        {/* Right Side Form */}
-        <div className="w-1/2 p-10 overflow-y-auto max-h-[90vh]">
-          <h1 className="text-3xl font-bold text-center mb-2">
-          <span className="text-green-600">Arogya</span>
-          <span className="text-blue-600">Care</span>
+    <div className="min-h-screen flex bg-gradient-to-r from-blue-50 to-teal-50">
+      {/* Left Section - Illustration + Text */}
+      <div className="hidden md:flex w-1/2 flex-col justify-center mb-20 bg-gradient-to-r from-green-50 to-blue-50 items-center p-10">
+        <h1 className="text-4xl font-bold text-blue-700 mb-4">
+          Join <span className="text-green-600">ArogyaCare</span>
         </h1>
-          <p className="text-center text-gray-500 mb-8">
-            Join our healthcare community and manage your health journey
-          </p>
+        <p className="text-lg text-gray-600 text-center max-w-md mb-6">
+          Create your account and manage your health journey with our trusted
+          healthcare community.
+        </p>
+
+        {/* Illustration */}
+        <img
+          src="/src/assets/loginimage.jpeg"
+          alt="Healthcare Illustration"
+          className="mt-10  rounded-2xl w-3/4"
+        />
+      </div>
+
+      {/* Right Section - Signup Form */}
+     <div className="flex w-full md:w-1/2 justify-center mb-60 items-center p-6">
+  <div className="bg-white rounded-2xl shadow-xl w-full max-w-2xl p-8">
+    {/* Header */}
+    <div className="flex flex-col items-center mb-6">
+      <div className="bg-teal-100 p-3 rounded-full">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-8 w-8 text-teal-600"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+          />
+        </svg>
+      </div>
+      <h2 className="text-2xl font-semibold  mt-3">
+        <span className = "text-blue-600">Create</span><span className="text-green-600"> Account</span> 
+      </h2>
+      <p className="text-gray-500 text-sm text-center">
+        Fill in your details to get started
+      </p>
+    </div>
+
+    {/* ... your form remains unchanged ... */}
+ 
+
+
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Personal Info Section */}
             <div>
-              <h3 className="font-semibold text-lg text-teal-600 mb-3">
+              <h3 className="font-semibold text-lg text-green-600 mb-3">
                 Personal Information
               </h3>
               <div className="grid grid-cols-2 gap-4">
@@ -86,7 +119,7 @@ export default function SignupPage() {
                   placeholder="Full Name *"
                   value={formData.name}
                   onChange={handleChange}
-                  className="border rounded-lg px-3 py-2 w-full"
+                  className="border rounded-xl px-3 py-2 w-full focus:ring-2 focus:ring-blue-400"
                   required
                 />
                 <input
@@ -95,7 +128,7 @@ export default function SignupPage() {
                   placeholder="Phone Number *"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="border rounded-lg px-3 py-2 w-full"
+                  className="border rounded-xl px-3 py-2 w-full focus:ring-2 focus:ring-blue-400"
                   required
                 />
                 <input
@@ -104,7 +137,7 @@ export default function SignupPage() {
                   placeholder="Email Address *"
                   value={formData.email}
                   onChange={handleChange}
-                  className="border rounded-lg px-3 py-2 w-full"
+                  className="border rounded-xl px-3 py-2 w-full focus:ring-2 focus:ring-blue-400"
                   required
                 />
                 <input
@@ -113,7 +146,7 @@ export default function SignupPage() {
                   placeholder="Address *"
                   value={formData.address}
                   onChange={handleChange}
-                  className="border rounded-lg px-3 py-2 col-span-2"
+                  className="border rounded-xl px-3 py-2 col-span-2 focus:ring-2 focus:ring-blue-400"
                   required
                 />
                 <input
@@ -122,13 +155,13 @@ export default function SignupPage() {
                   placeholder="Age"
                   value={formData.age}
                   onChange={handleChange}
-                  className="border rounded-lg px-3 py-2"
+                  className="border rounded-xl px-3 py-2 focus:ring-2 focus:ring-blue-400"
                 />
                 <select
                   name="gender"
                   value={formData.gender}
                   onChange={handleChange}
-                  className="border rounded-lg px-3 py-2"
+                  className="border rounded-xl px-3 py-2 focus:ring-2 focus:ring-blue-400"
                 >
                   <option value="">Select Gender</option>
                   <option value="Male">Male</option>
@@ -141,21 +174,21 @@ export default function SignupPage() {
                   placeholder="Password *"
                   value={formData.password}
                   onChange={handleChange}
-                  className="border rounded-lg px-3 py-2 col-span-2"
+                  className="border rounded-xl px-3 py-2 col-span-2 focus:ring-2 focus:ring-blue-400"
                   required
                 />
               </div>
             </div>
 
             {/* Checkbox for Medical Details */}
-            <div className="flex items-center space-x-2 border p-3 rounded-lg bg-green-50">
+            <div className="flex items-center space-x-2  p-3 rounded-lg ">
               <input
                 type="checkbox"
                 name="includeMedical"
                 checked={formData.includeMedical}
                 onChange={handleChange}
               />
-              <label className="text-sm text-gray-700">
+              <label className="text-sm  text-blue-700">
                 Include Medical Details (Optional but Recommended)
               </label>
             </div>
@@ -173,7 +206,7 @@ export default function SignupPage() {
                     placeholder="Weight (kg)"
                     value={formData.weight}
                     onChange={handleChange}
-                    className="border rounded-lg px-3 py-2"
+                    className="border rounded-xl px-3 py-2 focus:ring-2 focus:ring-blue-400"
                   />
                   <input
                     type="text"
@@ -181,13 +214,13 @@ export default function SignupPage() {
                     placeholder="Height (cm)"
                     value={formData.height}
                     onChange={handleChange}
-                    className="border rounded-lg px-3 py-2"
+                    className="border rounded-xl px-3 py-2 focus:ring-2 focus:ring-blue-400"
                   />
                   <select
                     name="bloodGroup"
                     value={formData.bloodGroup}
                     onChange={handleChange}
-                    className="border rounded-lg px-3 py-2"
+                    className="border rounded-xl px-3 py-2 focus:ring-2 focus:ring-blue-400"
                   >
                     <option value="">Blood Group</option>
                     <option value="A+">A+</option>
@@ -202,17 +235,17 @@ export default function SignupPage() {
                   <input
                     type="text"
                     name="vision"
-                    placeholder="Vision Details (e.g., -2.5 both eyes)"
+                    placeholder="Vision Details"
                     value={formData.vision}
                     onChange={handleChange}
-                    className="border rounded-lg px-3 py-2"
+                    className="border rounded-xl px-3 py-2 focus:ring-2 focus:ring-blue-400"
                   />
                   <textarea
                     name="allergies"
                     placeholder="Allergies / Medical Conditions"
                     value={formData.allergies}
                     onChange={handleChange}
-                    className="border rounded-lg px-3 py-2 col-span-2"
+                    className="border rounded-xl px-3 py-2 col-span-2 focus:ring-2 focus:ring-blue-400"
                   />
                   <input
                     type="text"
@@ -220,7 +253,7 @@ export default function SignupPage() {
                     placeholder="Emergency Contact Number"
                     value={formData.emergencyContact}
                     onChange={handleChange}
-                    className="border rounded-lg px-3 py-2"
+                    className="border rounded-xl px-3 py-2 focus:ring-2 focus:ring-blue-400"
                   />
                   <input
                     type="text"
@@ -228,7 +261,7 @@ export default function SignupPage() {
                     placeholder="Primary Doctor Contact"
                     value={formData.doctorContact}
                     onChange={handleChange}
-                    className="border rounded-lg px-3 py-2"
+                    className="border rounded-xl px-3 py-2 focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
               </div>
@@ -237,7 +270,7 @@ export default function SignupPage() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-teal-500 text-white py-3 rounded-lg hover:bg-teal-600 transition"
+              className="w-full bg-blue-600 text-white py-2.5 rounded-xl font-semibold hover:bg-blue-700 transition shadow-sm"
             >
               Create Account
             </button>
@@ -246,7 +279,7 @@ export default function SignupPage() {
           {/* Footer */}
           <p className="mt-4 text-center text-gray-600">
             Already have an account?{" "}
-            <Link to="/login" className="text-teal-500 hover:underline">
+            <Link to="/login" className="text-blue-600 font-medium hover:underline">
               Back to Login
             </Link>
           </p>
