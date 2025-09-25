@@ -335,8 +335,7 @@ def login():
     if not user or not check_password_hash(user.password, data["password"]):
         return jsonify({"error": "Invalid credentials"}), 401
 
-    if user.login_status:
-        return jsonify({"error": "User already logged in"}), 403
+
 
     # generate unique token (retry until unique)
     for _ in range(5):

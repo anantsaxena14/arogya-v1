@@ -5,53 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="265c6a7e-b26a-418c-bb00-4ea4ab9ae696" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instance/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/users.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/axios.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/axios.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-74JQWNDZ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-74JQWNDZ.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-G3PMV62Z.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-G3PMV62Z.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-PUQBGIJB.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-PUQBGIJB.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-TBZFGNNP.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-TBZFGNNP.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-TO66WDPU.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/chunk-TO66WDPU.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/framer-motion.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/framer-motion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/framer-motion.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/framer-motion.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/lucide-react.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/lucide-react.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/lucide-react.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/lucide-react.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-dom.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-dom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-dom_client.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-dom_client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-dom_client.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-dom_client.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-router-dom.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-router-dom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-router-dom.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react-router-dom.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-dev-runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-dev-runtime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-dev-runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-dev-runtime.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/react_jsx-runtime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/recharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/recharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/recharts.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/recharts.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/wouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/wouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/wouter.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/node_modules/.vite/deps/wouter.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Frontpage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Frontpage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Labtest/LabTestDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Labtest/LabTestDashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/LoginPage/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/LoginPage/LoginPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/LoginPage/VerifyPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/LoginPage/VerifyPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Medibot.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Medibot.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Profile/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Profile/ProfileInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Signup/Signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Signup/Signup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/VarDashboard/Appointment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/VarDashboard/Appointment.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/VarDashboard/MedicationReminders.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/VarDashboard/MedicationReminders.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,17 +25,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;my-changes&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/asus/PycharmProjects/arogya/backend&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "newbranch",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Dell/OneDrive/Desktop/ArogyaCarenew - Copy/arogyacare/backend"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\OneDrive\Desktop\ArogyaCarenew - Copy\arogyacare\backend" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
