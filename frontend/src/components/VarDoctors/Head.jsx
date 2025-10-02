@@ -41,8 +41,19 @@ const doctors = [
   },
 ];
 
+ 
+
 export default function DoctorListing() {
   const [search, setSearch] = useState("");
+  // Modal states
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newReminder, setNewReminder] = useState({
+    med: "",
+    time: "",
+    dosage: "",
+    notes: "",
+    Schedule: "",
+  });
 
   const filteredDoctors = doctors.filter(
     (doc) =>
@@ -50,6 +61,35 @@ export default function DoctorListing() {
       doc.specialization.toLowerCase().includes(search.toLowerCase()) ||
       doc.location.toLowerCase().includes(search.toLowerCase())
   );
+
+  const handleAddReminder = () => {
+    if (!newReminder.med || !newReminder.time) return;
+
+    // Update frontend state
+    setMedReminders((prev) => [
+      ...prev,
+      {
+        sno: Date.now(),
+        ...newReminder,
+      },
+    ]);
+
+    // TODO: Call backend to save reminder
+    /*
+    fetch("http://localhost:5000/add-reminder", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Auth-Token": token,
+        "X-User-Id": userId,
+      },
+      body: JSON.stringify(newReminder),
+    });
+    */
+
+    setNewReminder({ med: "", time: "", dosage: "", notes: "", Schedule: "" });
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="p-6">
@@ -135,9 +175,86 @@ export default function DoctorListing() {
 
             {/* Actions */}
             <div className="flex flex-col gap-2">
-              <button className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                <Calendar size={16} /> Book Appointment
+              {/* add new appointment */}
+              {/* Add New Reminder Button */}
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="w-full border border-gray-300 rounded-lg py-2 mt-4 text-sm text-white-600 bg-blue-500 hover:bg-gray-100"
+      >
+        + Add New Appointment
+      </button>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center  bg-opacity-40 z-50">
+          <div className="bg-white rounded-xl shadow-lg p-6 w-96">
+            <h3 className="text-lg font-semibold mb-4">Add New Appointment</h3>
+
+            <div className="space-y-3">
+              <input
+                type="text"
+                placeholder="Medication Name"
+                value={newReminder.med}
+                onChange={(e) =>
+                  setNewReminder({ ...newReminder, med: e.target.value })
+                }
+                className="w-full border p-2 rounded-lg text-sm"
+              />
+              <input
+                type="time"
+                value={newReminder.time}
+                onChange={(e) =>
+                  setNewReminder({ ...newReminder, time: e.target.value })
+                }
+                className="w-full border p-2 rounded-lg text-sm"
+              />
+              <input
+                type="text"
+                placeholder="Dosage (e.g., 250mg, 2 pills)"
+                value={newReminder.dosage}
+                onChange={(e) =>
+                  setNewReminder({ ...newReminder, dosage: e.target.value })
+                }
+                className="w-full border p-2 rounded-lg text-sm"
+              />
+              <input
+                type="text"
+                placeholder="Notes (e.g., before eating)"
+                value={newReminder.notes}
+                onChange={(e) =>
+                  setNewReminder({ ...newReminder, notes: e.target.value })
+                }
+                className="w-full border p-2 rounded-lg text-sm"
+              />
+              <input
+                type="text"
+                placeholder="Schedule (e.g., Daily, Weekly)"
+                value={newReminder.Schedule}
+                onChange={(e) =>
+                  setNewReminder({ ...newReminder, Schedule: e.target.value })
+                }
+                className="w-full border p-2 rounded-lg text-sm"
+              />
+            </div>
+
+            {/* Buttons */}
+            <div className="flex justify-end space-x-2 mt-5">
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="px-4 py-2 text-sm rounded-lg border border-gray-300 hover:bg-gray-100"
+              >
+                Cancel
               </button>
+              <button
+                onClick={handleAddReminder}
+                className="px-4 py-2 text-sm rounded-lg bg-blue-500 text-white hover:bg-blue-600"
+              >
+                Add Appointment
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
               <button className="flex items-center gap-2 border px-4 py-2 rounded hover:bg-gray-100">
                 <Phone size={16} /> Request Contact
               </button>

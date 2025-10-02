@@ -28,7 +28,7 @@ export default function Navbar() {
   // Auto close dropdown after 5 seconds
   useEffect(() => {
     if (open) {
-      timerRef.current = setTimeout(() => setOpen(false), 5000);
+      timerRef.current = setTimeout(() => setOpen(false), 2000);
     }
     return () => clearTimeout(timerRef.current);
   }, [open]);
