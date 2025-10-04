@@ -16,7 +16,7 @@ CORS(app, supports_credentials=True, origins=["http://localhost:5173"])
 
 # IMPORTANT: change for production and use env vars
 app.config["SECRET_KEY"] = "your_secret_key_here"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///arogyacare.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Mail config (replace with your SMTP settings; consider environment vars)
